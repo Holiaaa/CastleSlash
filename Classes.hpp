@@ -11,4 +11,6 @@ class Classes{
         Classes() : name(""), symbol("") {} // pour l'attribut joueur
         text_t getName();
         text_t getSymbol();
+        void setName(text_t n);
+        void setSymbol(text_t s);
 };

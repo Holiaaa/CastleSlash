@@ -7,6 +7,7 @@ class Game {
     private:
         Player player;
         map_t map;
+        Map map_info;
         Interface interface;
     public:
         Game();
@@ -14,6 +15,7 @@ class Game {
         void setMap(Map m);
         void showMap();
         void setInterface(Interface i);
-        Interface getInterface();
-        Player getPlayer();
+        Interface* getInterface();
+        Player* getPlayer();
+        Map* getMap();
 };

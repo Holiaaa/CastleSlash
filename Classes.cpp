@@ -15,3 +15,11 @@ text_t Classes::getName() {
 text_t Classes::getSymbol() {
     return symbol;
 }
+
+void Classes::setName(text_t n) {
+    name = n;
+}
+
+void Classes::setSymbol(text_t s) {
+    symbol = s;
+}

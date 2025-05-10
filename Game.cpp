@@ -7,6 +7,7 @@ void Game::setPlayer(Player p) {
 }
 
 void Game::setMap(Map m) {
+    map_info = m;
     m.copyData(map);
 } 
 
@@ -24,10 +25,14 @@ void Game::setInterface(Interface i) {
     interface = i;
 }
 
-Interface Game::getInterface() {
-    return interface;
+Interface* Game::getInterface() {
+    return &interface;
 }
 
-Player Game::getPlayer() {
-    return player;
+Player* Game::getPlayer() {
+    return &player;
+}
+
+Map* Game::getMap() {
+    return &map_info;
 }

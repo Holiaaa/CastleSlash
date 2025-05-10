@@ -36,3 +36,49 @@ int Player::getX() {
 int Player::getY() {
     return y;
 }
+
+void Player::setAtk(int a) {
+    stats.atk = a;
+}
+
+void Player::setDef(int d) {
+    stats.def = d;
+}
+
+void Player::setHp(int h) {
+    stats.hp = h;
+}
+
+void Player::setHpMax(int hp) {
+    stats.hpmax = hp;
+}
+
+int Player::getAtk() {
+    return stats.atk;
+}
+
+int Player::getDef() {
+    return stats.def;
+}
+
+int Player::getHp() {
+    return stats.hp;
+}
+
+int Player::getHpMax() {
+    return stats.hpmax;
+}
+
+void Player::setMoney(int m) {
+    money = m;
+}
+
+int Player::getMoney() {
+    return money;
+}
+
+int Player::getLVL() {
+    return lvl;
+}
+
+void Player::setLVL() {}

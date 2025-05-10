@@ -1,11 +1,15 @@
 #include "Utils.hpp"
-#include <stdio.h>
 
 #include "Interface.hpp"
+#include "Colors.hpp"
 
 Interface::Interface() {
     printf("\033[H\033[J");
 };
+
+void Interface::clear() {
+    printf("\033[H\033[J");
+}
 
 void Interface::drawBox(int x, int y, int w, int h) {
     printf("\033[%d;%dH%c", y, x, Characters::UpperLeftCorner);
@@ -24,4 +28,13 @@ void Interface::drawBox(int x, int y, int w, int h) {
     }
 
     printf("\n");
+}
+
+void Interface::drawText(int x, int y, const text_t& text, const text_t& color) {
+    printf("\033[%d;%dH%s%s", y, x, color.c_str(), text.c_str());
+    Interface::setColor(WHT);
+}
+
+void Interface::setColor(const text_t& color) {
+    printf("%s", color.c_str());
 }

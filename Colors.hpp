@@ -14,6 +14,13 @@
 #define MAG "\e[0;35m"
 #define CYN "\e[0;36m"
 #define WHT "\e[0;37m"
+#define ORN  "\e[38;5;208m"
+#define PNK  "\e[38;5;205m"
+#define DGRY "\e[38;5;240m"
+#define BRN  "\e[38;5;94m" 
+#define VIO  "\e[38;5;129m"
+#define TEAL "\e[38;5;30m"
+#define LIME "\e[38;5;118m"
 
 #define BBLK "\e[1;30m"
 #define BRED "\e[1;31m"

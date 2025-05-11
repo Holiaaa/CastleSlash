@@ -34,3 +34,11 @@ void Map::copyData(map_t d) {
         }
     }
 }
+
+void Map::setConfig(mconfig c) {
+    cfg = c;
+}
+
+mconfig* Map::getConfig() {
+    return &cfg;
+}

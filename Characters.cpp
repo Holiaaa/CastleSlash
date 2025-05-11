@@ -6,3 +6,5 @@ const char Characters::LowerLeftCorner = 192;
 const char Characters::LowerRightCorner = 217;
 const char Characters::HorizontalLine = 196;
 const char Characters::VerticalLine = 179;
+
+const char Characters::Nothing = 219;

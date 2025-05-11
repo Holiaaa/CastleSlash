@@ -1,7 +1,11 @@
 #include "Utils.hpp"
 
 #include "Interface.hpp"
+#include "Player.hpp"
 #include "Colors.hpp"
+#include "Game.hpp"
+
+#include <string>
 
 Interface::Interface() {
     printf("\033[H\033[J");
@@ -9,6 +13,35 @@ Interface::Interface() {
 
 void Interface::clear() {
     printf("\033[H\033[J");
+}
+
+void Interface::drawMap(int x, int y, int r, map_t m, Player* p, Map* map) {
+    int centreX = p->getX();
+    int centreY = p->getY();
+
+    int left   = r*2;
+    int right  = r*2;
+    int top    = r;
+    int bottom = r;
+
+    for (int j = centreY - top; j <= centreY + bottom; j++) {
+        for (int i = centreX - left; i <= centreX + right; i++) {
+            int drawX = x + (i - centreX);
+            int drawY = y - (j - centreY);
+
+            if (i >= 0 && i < 50 && j >= 0 && j < 50) {
+                if (i == centreX && j == centreY) {
+                    Interface::drawText(drawX + 1, drawY + 1, "Y", WHT);
+                } else {
+                    if (m[j][i] == 0) {
+                        Interface::drawText(drawX + 1, drawY + 1, Characters::Nothing, map->getConfig()->ground);
+                    }
+                }
+            } else {
+                Interface::drawText(drawX, drawY, "   ", WHT);
+            }
+        }
+    }
 }
 
 void Interface::drawBox(int x, int y, int w, int h) {
@@ -32,6 +65,11 @@ void Interface::drawBox(int x, int y, int w, int h) {
 
 void Interface::drawText(int x, int y, const text_t& text, const text_t& color) {
     printf("\033[%d;%dH%s%s", y, x, color.c_str(), text.c_str());
+    Interface::setColor(WHT);
+}
+
+void Interface::drawText(int x, int y, const char text, const text_t& color) {
+    printf("\033[%d;%dH%s%c", y, x, color.c_str(), text);
     Interface::setColor(WHT);
 }
 

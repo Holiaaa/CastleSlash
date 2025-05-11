@@ -1,7 +1,5 @@
 #include "Events.hpp"
 
-// Code repris et légerement modifier de CastleSlash V1 (https://github.com/Holiaaa/CastleSlash-Old/blob/main/source/events.c)
-
 int Events::getInput() {
     int input = getch();
     if (input == Events::KEY_DIR_ALIAS || input == 224) {

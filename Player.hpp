@@ -39,4 +39,6 @@ class Player {
         int getMoney();
         int getLVL();
         void setLVL(); // TODO: Level system.
+        void setX(int nx);
+        void setY(int ny);
 };

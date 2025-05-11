@@ -1,3 +1,5 @@
+#pragma once
+
 class Characters {
     public:
         static const char UpperRightCorner;
@@ -6,4 +8,6 @@ class Characters {
         static const char LowerRightCorner;
         static const char HorizontalLine;
         static const char VerticalLine;
+
+        static const char Nothing;
 };

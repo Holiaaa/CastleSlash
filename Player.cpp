@@ -2,7 +2,7 @@
 #include "Classes.hpp"
 #include "Player.hpp"
 
-Player::Player() : x(0), y(0) {}
+Player::Player() {}
 
 /// @brief Renvoie le nom d'un joueur.
 /// @author Téo JAUFFRET
@@ -82,3 +82,11 @@ int Player::getLVL() {
 }
 
 void Player::setLVL() {}
+
+void Player::setX(int nx) {
+    x = nx;
+}
+
+void Player::setY(int ny) {
+    y = ny;
+}
